@@ -95,7 +95,7 @@ app.post("/api/v1/payments", async (req, res) => {
                     await Payment.updateOne({_id: req.query.paymentID}, {
                         status: "complete"
                     });
-                    res.json({"status": "SUCCESS"});
+                    res.json({"status": "SUCCESS", payment: savedPayment});
                 }
                 updatePaymentStatus();
             })

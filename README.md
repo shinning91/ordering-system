@@ -14,6 +14,12 @@ Order and Payment services will run in their own dedicated port 3001 and 3002 re
 
 Run `docker-compose up --build` to build the containers and run them.
 
+## Demo
+
+Services were deployed on AWS EC2: http://ec2-3-137-190-12.us-east-2.compute.amazonaws.com/
+
+Use Postman to test the API endpoints
+
 ## Future improvement
 - Add validation on the API endpoints
 - Add other services such as Hotel and Customer for a complete flow
