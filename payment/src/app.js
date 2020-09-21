@@ -92,10 +92,10 @@ app.post("/api/v1/payments", async (req, res) => {
             }
             authenticateCreditCard().then(() => {
                 async function updatePaymentStatus() {
-                    await Payment.updateOne({_id: req.query.paymentID}, {
-                        status: "complete"
+                    const updatedPayment =  await Payment.findOneAndUpdate({_id: req.query.paymentID}, {
+                        status: "complete", payment: updatedPayment
                     });
-                    res.json({"status": "SUCCESS", payment: savedPayment});
+                    res.json({"status": "SUCCESS"});
                 }
                 updatePaymentStatus();
             })
